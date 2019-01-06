@@ -1,0 +1,68 @@
+﻿{
+  "ReRoutes": [
+    // Route: catalog-api for catchAll
+    {
+      "DownstreamPathTemplate": "/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/catalog-api/{catchAll}"
+    },
+    // Route: catalog-api for aggregate
+    {
+      "DownstreamPathTemplate": "/catalog/aggregate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/catalog-api/catalog/aggregate",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "catalog"
+    },
+    // Route: orders-api for catchAll
+    {
+      "DownstreamPathTemplate": "/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/orders-api/{catchAll}"
+    },
+    // Route: orders-api for aggregate
+    {
+      "DownstreamPathTemplate": "/orders/aggregate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/orders-api/orders/aggregate",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "orders"
+    }
+  ],
+  "Aggregates": [
+    {
+      "ReRouteKeys": [
+        "catalog",
+        "orders"
+      ],
+      "UpstreamPathTemplate": "/aggregate"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}

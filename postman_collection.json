@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "c9a80a9a-5e9d-49dc-a630-cc1e249fd6b6",
+		"name": "PlayingWithOcelot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Call-Catalog-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/catalog-api/catalog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"catalog-api",
+						"catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call-Orders-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/orders-api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"orders-api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call-aggregate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/aggregate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"aggregate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
