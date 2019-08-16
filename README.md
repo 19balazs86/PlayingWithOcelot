@@ -14,7 +14,7 @@ This is a small .NET Core WebAPI application to try out Ocelot. An open-source .
 
 - [Ocelot](https://ocelot.readthedocs.io) home page, documentation.
 - [Ocelot - GitHub page](https://github.com/ThreeMammals/Ocelot).
-- C# Corner: [Ocelot and Service Discovery with Consul](https://www.c-sharpcorner.com/article/building-api-gateway-using-ocelot-in-asp-net-core-service-discovery-consul/).
+- C# Corner series: [Ocelot and Service Discovery with Consul](https://www.c-sharpcorner.com/article/building-api-gateway-using-ocelot-in-asp-net-core-configuration-consul/).
 - Medium article: [Microservices API Gateways - Ocelot for .NET Core + Video](https://medium.com/hypertrends/microservices-api-gateways-ocelot-for-net-core-video-8bbd4ed3be8f ).
 - Microsoft page: [Implement API Gateways with Ocelot](https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot "Implement API Gateways with Ocelot").
 - PogsDotNet
