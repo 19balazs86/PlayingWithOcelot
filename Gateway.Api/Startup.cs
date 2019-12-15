@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,17 +18,18 @@ namespace Gateway.Api
 
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
       services.AddOcelot(Configuration);
     }
 
-    public async void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public async void Configure(IApplicationBuilder app)
     {
-      if (env.IsDevelopment())
-        app.UseDeveloperExceptionPage();
+      app.UseDeveloperExceptionPage();
 
-      app.UseMvc();
+      app.UseRouting();
+
+      app.UseEndpoints(endpoints => endpoints.MapControllers());
 
       await app.UseOcelot();
     }

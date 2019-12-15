@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
 namespace Gateway.Api
 {
@@ -8,15 +8,17 @@ namespace Gateway.Api
   {
     public static void Main(string[] args)
     {
-      CreateWebHostBuilder(args).Build().Run();
+      createHostBuilder(args).Build().Run();
     }
 
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-      WebHost.CreateDefaultBuilder(args)
-        .ConfigureAppConfiguration((hostContext, configBuilder) =>
-        {
-          configBuilder.AddJsonFile("ocelot.json");
-        })
-        .UseStartup<Startup>();
+    private static IHostBuilder createHostBuilder(string[] args)
+    {
+      return Host
+        .CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webHostBuilder =>
+          webHostBuilder
+            .ConfigureAppConfiguration((hostContext, configBuilder) => configBuilder.AddJsonFile("ocelot.json"))
+            .UseStartup<Startup>());
+    }
   }
 }
