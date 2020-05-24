@@ -1,5 +1,5 @@
 ﻿{
-  "ReRoutes": [
+  "Routes": [
     // Route: catalog-api for catchAll
     {
       "DownstreamPathTemplate": "/{catchAll}",
@@ -55,7 +55,7 @@
   ],
   "Aggregates": [
     {
-      "ReRouteKeys": [
+      "RouteKeys": [
         "catalog",
         "orders"
       ],
