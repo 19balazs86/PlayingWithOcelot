@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Catalog.Api
+﻿namespace Catalog.Api
 {
   public class Startup
   {
@@ -16,7 +11,7 @@ namespace Catalog.Api
 
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+      services.AddControllers();
     }
 
     public void Configure(IApplicationBuilder app)
