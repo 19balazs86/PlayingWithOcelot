@@ -2,6 +2,8 @@
 
 This is a small .NET Core WebAPI application to try out Ocelot. An open-source .NET Core API Gateway.
 
+**Better way** for API gateway is [YARP](https://microsoft.github.io/reverse-proxy/index.html).
+
 #### Getting Started
 1. Nuget: Install-Package Ocelot.
 2. Configuration: create ocelot.json and define the ReRoutes.
